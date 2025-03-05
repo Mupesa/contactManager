@@ -40,20 +40,22 @@ public class ContactManager {
     }
 
     // Method to search for a contact by name
-    public void searchContact(String name) {
-        boolean found = false;
-        for (Contact contact : contacts) {
-            if (contact.getName().equalsIgnoreCase(name)) {
-                System.out.println("\nContact Found:");
-                contact.displayContact();
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("\nContact not found.");
-        }
-    }
+    // public void searchContact(String name) {
+    //     boolean found = false;
+    //     for (Contact contact : contacts) {
+    //         if (contact.getName().equalsIgnoreCase(name)) {
+    //             System.out.println("\nContact Found:");
+    //             contact.displayContact();
+    //             found = true;
+    //             break;
+    //         }
+    //     }
+    //     if (!found) {
+    //         System.out.println("\nContact not found.");
+    //     }
+    // }
+
+    
 
     // Method to delete a contact by name
     public void deleteContact(String name) {
