@@ -1,14 +1,10 @@
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.Objects;
 
 public class Contact {
-    // Fields to store contact information
     private String name;
     private String email;
-    private String phone; // Changed from int to String
+    private String phone;
 
-    // Constructor to initialize the contact
     public Contact(String name, String email, String phone) {
         this.name = name;
         this.email = email;
@@ -16,28 +12,34 @@ public class Contact {
     }
 
     // Getters
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
+    public String getEmail() { return email; }
+    public String getPhone() { return phone; }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    // Method to display contact details
+    // Display contact details
     public void displayContact() {
         System.out.println("Name: " + name);
         System.out.println("Email: " + email);
         System.out.println("Phone: " + phone);
     }
 
-    // Override toString for better output representation
     @Override
     public String toString() {
         return "Name: " + name + ", Email: " + email + ", Phone: " + phone;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Contact contact = (Contact) o;
+        return Objects.equals(name, contact.name) &&
+               Objects.equals(email, contact.email) &&
+               Objects.equals(phone, contact.phone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, email, phone);
     }
 }
